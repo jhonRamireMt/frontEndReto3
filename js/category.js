@@ -4,7 +4,7 @@ function obtenerCategorias(){
         type : 'GET',
         dataType : 'json',
         success : function(json, xhr, status){
-            alert("Datos obtenidos correctamente " + xhr.status)
+            alert("Datos obtenidos correctamente ")
             setTableCategory(json);
             console.log(json);
         }
