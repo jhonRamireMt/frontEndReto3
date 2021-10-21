@@ -1,6 +1,6 @@
 function obtenerClientes(){
     $.ajax({
-        url: 'http://144.22.57.2:8080/api/Client/all',
+        url: 'http://localhost:8080/api/Client/all',
         type: 'GET',
         dataType : 'json',
         success:function(json, status){
@@ -42,7 +42,7 @@ function crearCliente(){
         $.ajax({    
             contentType:"application/json",
             data : dataToSend,
-            url : 'http://144.22.57.2:8080/api/Client/save',
+            url : 'http://localhost:8080/api/Client/save',
             type : 'POST',
             dataType: 'json',
             success : function(json, status, xhr) {

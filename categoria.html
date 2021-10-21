@@ -4,31 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MENSAJE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
+    <title>Categoria</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/cabin.js"></script>
+    <script type="text/javascript" src="/js/category.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1 class="titulo"> TABLA MENSAJE </h1>
+    <h1 class="titulo"> TABLA CATEGORIA </h1>
     <div class="divCampos">
         <br>
-        <legend class="subTitulo">CONSULTAR TABLA MENSAJE
+        <legend class="subTitulo">CONSULTAR TABLA CATEGORIA
     
-            <div class="divResultado" id="resultadoMensaje">
+            <div class="divResultado" id="resultadoCategory">
                 <h2 class="subTitulo"></li></h2>
             </div>
         </legend>
         
     </div >
     <div class="botonesCabin">
-        <button class="botones" onclick="obtenerMensajes()">Mostrar Datos</button>
+        <button class="botones" onclick="obtenerCategorias()">Cargar Tabla</button>
         <br>
         <br>
         <br>
-        <a href="/paginas/index.html"><button class="botones">Volver al inicio</button></a>
-      
-    </div>
+        <a href="/index.html"><button class="botones">Volver al inicio</button></a>
+
+        <script type="text/javascript">
+
+            //window.onload = obtenerCategorias();
+            
+        </script>
 </body>
 </html>

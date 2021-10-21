@@ -1,6 +1,6 @@
 function obtenerReservas(){
     $.ajax({
-        url: 'http://144.22.57.2:8080/api/Reservation/all',
+        url: 'http://localhost:8080/api/Reservation/all',
         type: 'GET',
         dataType : 'json',
         success:function(json, status){
@@ -41,7 +41,7 @@ function crearReservacion(){
         $.ajax({    
             contentType:"application/json",
             data : dataToSend,
-            url : 'http://144.22.57.2:8080/api/Reservation/save',
+            url : 'http://localhost:8080/api/Reservation/save',
             type : 'POST',
             dataType: 'json',
             success : function(json, status, xhr) {
