@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/client.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div>
+      <h1 class="tituloLista">CREAR CLIENTE</h1>
+            <fieldset>
+              <legend class="form">Introducir datos del Cliente</legend>
+  
+              <p>
+                <label id="label">Nombre</label>
+                <br>
+                <input class="inputCabin" type="text" id="nameClient" maxlength="250" placeholder="nombre">  
+              </p>
+  
+              <p>
+                <label id="label">Password</label>
+                <br>
+                <input class="inputCabin" type="text" id="password" placeholder="clave">    
+              </p>
+  
+              <p>
+                <label id="label">Email</label>
+                <br>
+                <input class="inputCabin" type="email" id="email" maxlength="45" placeholder="email">  
+              </p>
+  
+              <p>
+                <label id="label">Edad</label>
+                <br>
+                <input class="inputCabin" type="number" id="edad" placeholder="edad">    
+              </p>
+              <button class="botones" onclick="crearCliente()">Enviar</button>
+            </fieldset>   
+    </div>
+      <div>
+          
+          <br>
+          <a href="/index.html"><button class="botonesVolver">Volver al inicio</button></a>
+      </div>
+</body>
+</html>

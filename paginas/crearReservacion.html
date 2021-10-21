@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Reserva</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/Reservation.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div>
+        <form>
+            <h1 class="tituloLista">Crear Reserva</h1>
+            <fieldset>
+              <legend class="form">Introducir fechas</legend>
+
+              <p>
+                <label id="label">Fecha de Inicio</label>
+                <br>
+                <input class="inputCabin" type="datetime-local" id="fechaInicio">    
+              </p>
+
+              <p>
+                <label id="label">Fecha Finalizacion</label>
+                <br>
+                <input class="inputCabin" type="datetime-local" id="fechaFinal" >    
+              </p>
+              
+ 
+            </fieldset>
+            
+          </form>
+          <button class="botones" onclick="crearReservacion()">Enviar</button>
+    </div>
+    <div>
+          
+      <br>
+      <a href="/index.html"><button class="botonesVolver">Volver al inicio</button></a>
+  </div>
+</body>
+</html>

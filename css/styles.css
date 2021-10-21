@@ -1,0 +1,169 @@
+*{
+    box-sizing: border-box;
+}
+header .container{
+    display: flex; /* crea flexibilidad en el bloque*/
+    justify-content: space-between; /* da un espacio entre los bloques*/
+}
+.container{
+    width: 1140px;
+    margin: 0 auto 0 auto;
+    align-items: center;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+header .container .logo{
+    width: 75px;
+}
+
+a{
+    display: inline-block; /*Display cambia el comportamiento de los elementos*/
+}
+header .container a{
+    color: white;
+    text-decoration: none; /* elimina las lineas inferiores de los enlaces*/
+    margin: 0 15px;
+}
+
+header{
+    padding: 15px 0;
+    position: fixed; /* mueve el banner al tope superior de la pagina*/
+    top: 0;
+    left: 0;
+    z-index: 2; /* coloca el bannerpor debajo de los elementos*/
+    background-color:#CD5C5C;
+    width: 100%;
+}
+
+body{
+    font-family: "Roboto"; /* familia de fuentes traida desde gogle font*/
+}
+
+.titulo{
+    color:darkblue;
+    text-align: center;
+}
+.subTitulo{
+    padding-left: 20px;
+    font:bold;
+    color: darkblue;
+}
+.tituloLista{
+    color:blue;
+    text-align: center;
+}
+.listasCabin{
+    list-style: none;
+    padding-top: 10px;
+    font-family: 'Courier New', Courier, monospace;  
+}
+.form{
+    color: white;
+}
+.inputCabin{
+    padding-top: 8px;
+    background-color: aliceblue;
+}
+.botonesCabin{
+    padding-top: 10px;
+}
+.divCampos{
+    text-align: center;
+    padding-top: 20px;
+    
+}
+.botonesCabin{
+    padding-top: 20px;
+    text-align: center;
+    padding-left: 40px;
+}
+.botones{
+    background-color:burlywood;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-block: 12px;
+    align-items: center;
+}
+.botonesVolver{
+    background-color:mediumaquamarine;
+    color: black;
+    font-size: medium;
+    align-content: center;
+    padding-block: 15px;
+
+}
+.botonMostrar{
+    background-color:burlywood;
+    text-align: center;
+    padding-block: 5px;
+}
+.divResultado{
+    text-align: center;
+}
+#inicio{
+    position: relative;
+}
+#inicio img{
+    width: 100%;
+    display: flexbox;
+    
+}
+
+#inicio .bloque-inicio{
+    position: absolute; /*Se usa absoluto para que el bloque quede flotando y pueda ser ubicado mediante atributos*/
+    top: 10%;
+    left: 50%;
+    width: 700px;
+    text-align: center;
+    margin-left: -350px;
+}
+
+#inicio .bloque-inicio h1{
+    color: white;
+    font-size: 64px;
+}
+#inicio .bloque-inicio p{
+    color: white;
+}
+#boton-img{
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+.boton-color{
+    color: white;
+    background-color:silver;
+    text-decoration: none;
+    text-align: center;
+}
+
+#servicios{
+    background-color: darkred;
+}
+
+#subtituloServicios{
+    font-family: "Roboto";
+    font-size: 36px;
+    color: white;
+    text-align: center;
+}
+#servicios .columnas{
+    display: inline-block; /* coloca los bloques de botones en linea*/
+    align-content: center;
+}
+.columnas .bloque-servicio{
+    justify-content: space-between; 
+    background-color: darkred;
+    align-items: center;
+    margin: 75px;
+    padding-left: 30px;
+}
+.columnas a{
+    background-color: darkred;
+}
+body{
+    background-color: darkred;
+}
+
