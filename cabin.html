@@ -5,35 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONSULTA CABAÑA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/cabin.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <h1 class="titulo"> TABLA CABAÑAS </h1>
+    <section>
+        <header>
+            <div class="container">
+                <a href="">
+                    <img src="img/logocabin256.png" class="logo">
+                </a>
+                <nav>
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#servicios">Crear Datos</a>
+                    <a href="categoria.html">Categorias</a>
+                    <a href="cabin.html">Cabañas</a>
+                    <a href="cliente.html">Clientes</a>    
+                    <a href="mensaje.html">Mensajes</a>        
+                    <a href="reserva.html">Reservaciones</a>
+                </nav>
+            </div>
+        </header>
+    </section>
 
-<div class="divCampos">
-    <br>
-    <legend class="subTitulo">CONSULTAR TABLA CABAÑA 
-
-        <div class="divResultado" id="resultadoCabin">
-            <h2 class="subTitulo"></li></h2>
+    <section class="section-datos">
+        <h1 class="titulo"> LISTA DE CABAÑAS </h1>
+        <div class="divCampos">
+            <br>
+            <div class="divResultado" id="resultadoCabin">
+                <h2 class="subTitulo"></h2>
+            </div>
+        </div >
+        <div class="botonesListas">
+            <a href="index.html"><button>Volver al inicio</button></a>
         </div>
+    </section>
 
-        <br>
-    </legend>
-    
-</div >
-<div class="botonesCabin">
-    <button class="botones" onclick="obtenerCabin()"> Mostrar Tabla </button>
-    <br>
-    <br>
-    <br>
-    <a href="index.html"><button class="botones">Volver al inicio</button></a>
-</div>
 <script type="text/javascript">
-    //window.onload=obtenerCabin();
-
+    window.onload=obtenerCabin();
 </script>
     
 </body>

@@ -5,15 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Reserva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/Reservation.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <div>
+    <section>
+        <header>
+            <div class="container">
+                <a href="">
+                    <img src="img/logocabin256.png" class="logo">
+                </a>
+                <nav>
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#servicios">Crear Datos</a>
+                    <a href="categoria.html">Categorias</a>
+                    <a href="cabin.html">Cabañas</a>
+                    <a href="cliente.html">Clientes</a>    
+                    <a href="mensaje.html">Mensajes</a>        
+                    <a href="reserva.html">Reservaciones</a>
+                </nav>
+            </div>
+        </header>
+    </section>
+
+    <section class="section-datos">
+      <div>
         <form>
-            <h1 class="tituloLista">Crear Reserva</h1>
+            <h1 class="tituloLista">CREAR RESERVACION</h1>
             <fieldset>
               <legend class="form">Introducir fechas</legend>
 
@@ -28,6 +51,17 @@
                 <br>
                 <input class="inputCabin" type="datetime-local" id="fechaFinal" >    
               </p>
+
+              <P>
+                <label id="label">Selecionar Cliente</label><br>
+                  <select id="select-client" ></select>
+              </P>
+
+              <P>
+                <label id="label">Selecionar Cabaña a Reservar</label><br>
+                  <select id="select-cabin" ></select>
+              </P>
+              
               
  
             </fieldset>
@@ -35,10 +69,15 @@
           </form>
           <button class="botones" onclick="crearReservacion()">Enviar</button>
     </div>
-    <div>
-          
+    <div> 
       <br>
       <a href="index.html"><button class="botonesVolver">Volver al inicio</button></a>
   </div>
+  <script type="text/javascript">
+    window.onload = autoInicioClient();
+    window.onload = autoInicioCabin();
+  </script>
+    </section>
+    
 </body>
 </html>

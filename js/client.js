@@ -1,10 +1,10 @@
 function obtenerClientes(){
     $.ajax({
-        url: 'http://144.22.57.2:8080/api/Client/all',
+        url: 'http://localhost:8080/api/Client/all',
         type: 'GET',
         dataType : 'json',
         success:function(json, status){
-            alert("Datos obtenidos correctamente");
+            //alert("Datos obtenidos correctamente");
             setTableCliente(json);
         }
     })
@@ -13,7 +13,7 @@ function obtenerClientes(){
 
 function setTableCliente(json){
     $("#resultadoCliente").empty(json);
-            tabla = "<center><table border='1'><tr><th>NOMBRE<th>EDAD<th>CORREO"
+            tabla = "<center><table border='3'><tr><th>NOMBRE<th>EDAD<th>CORREO"
             filas = ""
             for(let i of json){
                filas += "<tr>"
@@ -42,7 +42,7 @@ function crearCliente(){
         $.ajax({    
             contentType:"application/json",
             data : dataToSend,
-            url : 'http://144.22.57.2:8080/api/Client/save',
+            url : 'http://localhost:8080/api/Client/save',
             type : 'POST',
             dataType: 'json',
             success : function(json, status, xhr) {

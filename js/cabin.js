@@ -1,10 +1,10 @@
 function obtenerCabin(){
     $.ajax({
-        url: 'http://144.22.57.2:8080/api/Cabin/all',
+        url: 'http://localhost:8080/api/Cabin/all',
         type: 'GET',
         dataType : 'json',
         success:function(json, status){
-            alert("Datos obtenidos correctamente");
+            //alert("Datos obtenidos correctamente");
             setTableCabin(json);
         }
     })
@@ -12,7 +12,7 @@ function obtenerCabin(){
 
 function setTableCabin(json){
     $("#resultadoCabin").empty();
-            tabla = "<center><table border='1'><tr><th>NOMBRE<th>MARCA<th>HABITACIONES<th>DESCRIPCION<th>CATEGORIA</th>"
+            tabla = "<center><table border='3'><tr><th>NOMBRE<th>MARCA<th>HABITACIONES<th>DESCRIPCION<th>CATEGORIA</th>"
             filas = ""
             for(let i of json){
                filas += "<tr>"
@@ -30,7 +30,7 @@ function setTableCabin(json){
 function autoInicio(){
     console.log("se esta ejecuntando el auto inicio...")
     $.ajax({
-        url: 'http://144.22.57.2:8080/api/Category/all',
+        url: 'http://localhost:8080/api/Category/all',
         type: 'GET',
         dataType : 'json',
         success : function(json){
@@ -50,7 +50,7 @@ function autoInicio(){
 
 function crearCabin(){
 
-    if($("#nameCabin").val() == "" || $("#brandCabin").val() == "" || $("#roomsCabin") == "" || $("#descriptionCabin").val() == "" ) {
+    if($("#nameCabin").val() == "" || $("#brandCabin").val() == "" || $("#roomsCabin") == "" || $("#descriptionCabin").val() == "") {
         alert("Todos los campos son obligatorios")
     }else{
         
@@ -67,14 +67,14 @@ function crearCabin(){
         $.ajax({    
             contentType:"application/json",
             data : dataToSend,
-            url : 'http://144.22.57.2:8080/api/Cabin/save',
+            url : 'http://localhost:8080/api/Cabin/save',
             type : 'POST',
             dataType: 'json',
             success : function(json, status, xhr) {
                 alert("Cabaña creada correctamente " + xhr.status)      
             },
             error : function(xhr, status) {        
-                alert("Error al crear cabaña: "+xhr.status) 
+                alert("Debe crear una categoria primero: "+xhr.status) 
             },
             complete : function(xhr, status) {   
                  
