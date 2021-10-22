@@ -2,7 +2,7 @@
 
 function obtenerMensajes(){
     $.ajax({
-        url: 'http://localhost:8080/api/Message/all',
+        url: 'http://144.22.57.2:8080/api/Message/all',
         type: 'GET',
         dataType : 'json',
         success:function(json, status){
@@ -31,7 +31,7 @@ function setTableMensaje(json){
 function autoInicioCabin(){
     console.log("se esta ejecuntando el auto inicio...CABAÑA")
     $.ajax({
-        url: 'http://localhost:8080/api/Cabin/all',
+        url: 'http://144.22.57.2:8080/api/Cabin/all',
         type: 'GET',
         dataType: 'json',
         success:function(json){
@@ -49,7 +49,7 @@ function autoInicioCabin(){
 function autoInicioClient(){
     console.log("se esta ejecuntando el auto inicio...CLIENTE")
     $.ajax({
-        url: 'http://localhost:8080/api/Client/all',
+        url: 'http://144.22.57.2:8080/api/Client/all',
         type: 'GET',
         dataType: 'json',
         success:function(json){
@@ -80,7 +80,7 @@ function crearMensaje(){
         $.ajax({    
             contentType:"application/json",
             data : dataToSend,
-            url : 'http://localhost:8080/api/Message/save',
+            url : 'http://144.22.57.2:8080/api/Message/save',
             type : 'POST',
             dataType: 'json',
             success : function(json, status, xhr) {

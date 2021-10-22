@@ -1,6 +1,6 @@
 function obtenerCategorias(){
     $.ajax({
-        url: 'http://localhost:8080/api/Category/all',
+        url: 'http://144.22.57.2:8080/api/Category/all',
         type : 'GET',
         dataType : 'json',
         success : function(json, xhr, status){
@@ -40,7 +40,7 @@ function crearCategoria(){
         $.ajax({    
             contentType:"application/json",
             data : dataToSend,
-            url : 'http://localhost:8080/api/Category/save',
+            url : 'http://144.22.57.2:8080/api/Category/save',
             type : 'POST',
             dataType: 'json',
             success : function(json, status, xhr) {

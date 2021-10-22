@@ -1,6 +1,6 @@
 function obtenerCabin(){
     $.ajax({
-        url: 'http://localhost:8080/api/Cabin/all',
+        url: 'http://144.22.57.2:8080/api/Cabin/all',
         type: 'GET',
         dataType : 'json',
         success:function(json, status){
@@ -30,7 +30,7 @@ function setTableCabin(json){
 function autoInicio(){
     console.log("se esta ejecuntando el auto inicio...")
     $.ajax({
-        url: 'http://localhost:8080/api/Category/all',
+        url: 'http://144.22.57.2:8080/api/Category/all',
         type: 'GET',
         dataType : 'json',
         success : function(json){
@@ -67,7 +67,7 @@ function crearCabin(){
         $.ajax({    
             contentType:"application/json",
             data : dataToSend,
-            url : 'http://localhost:8080/api/Cabin/save',
+            url : 'http://144.22.57.2:8080/api/Cabin/save',
             type : 'POST',
             dataType: 'json',
             success : function(json, status, xhr) {
