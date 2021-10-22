@@ -20,7 +20,7 @@ function setTableCabin(json){
                filas +="<td>"+i.brand
                filas +="<td>"+i.rooms
                filas +="<td>"+i.description 
-               filas +="<td>"+i.category;
+               filas +="<td>"+i.category.name;
             }
             $("#resultadoCabin").append(tabla + filas+"</center>")
             console.log(json)
@@ -30,19 +30,19 @@ function setTableCabin(json){
 function autoInicio(){
     console.log("se esta ejecuntando el auto inicio...")
     $.ajax({
-        contentType:"application/json",
         url: 'http://144.22.57.2:8080/api/Category/all',
         type: 'GET',
         dataType : 'json',
         success : function(json){
-
             let $select = $("#select-category");
 
             $.each(json, function(id, name) {
 
-                $select.append('<option value=' + id +'>'+ name +'</option>');
-            
+                $select.append('<option value=' + name.id + '>'+ name.name +'</option>');
+                
+                console.log("select "+ name.id)
             });
+                
         } 
     }) 
 }
@@ -59,15 +59,11 @@ function crearCabin(){
             brand: $("#brandCabin").val(),
             rooms: $("#roomsCabin").val(),
             description: $("#descriptionCabin").val(),
-            category: $("#select-category").val()
+            category: {id:$("#select-category").val()},
             };
-
-
-
+            console.log("categoria "+myData.category)
            let dataToSend=JSON.stringify(myData); 
-
-
-           console.log(dataToSend)
+           console.log("datos a enviar "+dataToSend)
         $.ajax({    
             contentType:"application/json",
             data : dataToSend,
