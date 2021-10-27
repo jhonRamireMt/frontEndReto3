@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cabaña</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/cabin.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <section>
+        <header>
+            <div class="container">
+                <a href="">
+                    <img src="img/logocabin256.png" class="logo">
+                </a>
+                <nav>
+                  <a href="index.html">Inicio</a>
+                  <a href="index.html#servicios">Administracion de Datos</a>
+                  <a href="categoria.html">Categorias</a>
+                  <a href="cabin.html">Cabañas</a>
+                  <a href="cliente.html">Clientes</a>    
+                  <a href="mensaje.html">Mensajes</a>        
+                  <a href="reserva.html">Reservaciones</a>
+                </nav>
+            </div>
+        </header>
+    </section>
+
+    <section class="section-datos">
+      <h1 class="tituloLista">ADMINISTRAR CABAÑAS</h1>
+      <div class="divCampos">
+        <br>
+        <div class="divResultado" id="resultadoCabin">
+            <h2 class="subTitulo"></h2>
+        </div>
+    </div >
+      <div class="row-form"><br>
+        <fieldset>
+          <legend class="form">CREAR</legend>
+  
+                <p>
+                  <label id="label">Nombre: </label><br> 
+                  <input class="inputCabin"  type="text" id="nameCabin" maxlength="45" placeholder="nombre">
+                </p>
+
+                <p>
+                  <label id="label">Marca: </label><br> 
+                  <input class="inputCabin" type="text" id="brandCabin" maxlength="45" placeholder="marca"> 
+                </p>
+                  
+                <p>
+                  <label id="label">Habitaciones: </label><br>
+                  <input class="inputCabin" type="number" id="roomsCabin" placeholder="habitaciones">
+                </p>
+                
+                <p>
+                  <label id="label">Descripcion: </label><br>
+                  <input class="inputCabin" id="descriptionCabin" type="text" placeholder="Escriba una descripcion" maxlength="250"></input>
+                </p>
+                  
+                <p>
+                  <label id="label">Categoria: </label><br>
+                  <select id="select-category" ></select>
+                </p>
+                  
+                <p>
+
+                  <button class="botones" onclick="crearCabin()" >Enviar</button>
+                </p>
+  
+        </fieldset>    
+      </div>
+      
+      <div class="row-form"><br>
+        <fieldset>
+          <legend class="form">ELIMINAR</legend>
+  
+                <p>
+                  <label id="label">Seleccionar Cabaña a Eliminar: </label><br>
+                  <select id="select-delCabin" ></select>
+                </p>
+
+                <p>
+                  
+                  
+                  <button class="botones" onclick="eliminarCabin()" >Enviar</button>
+                </p>
+  
+        </fieldset>    
+      </div>
+      
+      <div class="row-form"><br>
+        <fieldset>
+          <legend class="form">MODIFICAR</legend>
+  
+                <p>
+                  <label id="label">Cabaña: </label><br>
+                  <select id="select-cabinToUpdate" ></select>
+                </p>
+
+                <p>
+                  <label id="label">Nombre: </label><br>
+                  <input class="inputCabin"  type="text" id="newNameCabin" maxlength="45" placeholder="nombre">  
+                </p>
+
+                <p>
+                  <label id="label">Marca: </label><br>
+                  <input class="inputCabin" type="text" id="newBrandCabin" maxlength="45" placeholder="marca"> 
+                </p>
+                <P>
+                  <label id="label">Habitaciones: </label><br>
+                  <input class="inputCabin" type="number" id="newRoomsCabin" placeholder="habitaciones">
+                </P>
+                
+                <P>
+                  <label id="label">Descripcion: </label><br>
+                  <input class="inputCabin" id="newDescriptionCabin" type="text" placeholder="Escriba una descripcion" maxlength="250"></input> 
+                </P>
+                  
+                <P>
+                  <label id="label">Categoria: </label><br>
+                  <select id="select-cabinToUpdateCategory" ></select>
+                </P>
+
+                <p>
+                  <button class="botones" onclick="actualizarCabin()" >Enviar</button>
+                </p>
+  
+        </fieldset>    
+      </div>
+    
+        <div class="botonesListas">  
+            <br>
+            <a href="index.html"><button>Volver al inicio</button></a>
+        </div>
+ 
+    </section><br>
+
+    <script type="text/javascript">
+      window.onload=obtenerCabin();
+      window.onload = autoInicio();
+
+    </script>
+  
+
+</body>
+</html>

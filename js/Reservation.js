@@ -1,6 +1,6 @@
 function obtenerReservas(){
     $.ajax({
-        url: 'http://144.22.57.2:8080/api/Reservation/all',
+        url: 'http://localhost:8080/api/Reservation/all',
         type: 'GET',
         dataType : 'json',
         success:function(json, status){
@@ -32,7 +32,7 @@ function setTableReserva(json){
 function autoInicioClient(){
     console.log("se esta ejecuntando el auto inicio...CLIENTE")
     $.ajax({
-        url: 'http://144.22.57.2:8080/api/Client/all',
+        url: 'http://localhost:8080/api/Client/all',
         type: 'GET',
         dataType: 'json',
         success:function(json){
@@ -50,7 +50,7 @@ function autoInicioClient(){
 function autoInicioCabin(){
     console.log("se esta ejecuntando el auto inicio...CABAÑA")
     $.ajax({
-        url: 'http://144.22.57.2:8080/api/Cabin/all',
+        url: 'http://localhost:8080/api/Cabin/all',
         type: 'GET',
         dataType: 'json',
         success:function(json){
@@ -65,36 +65,127 @@ function autoInicioCabin(){
     })
 }
 
+function selectEliminarReserva(){
+    console.log("se esta ejecuntando el auto inicio...eliminar reserva")
+    $.ajax({
+        url: 'http://localhost:8080/api/Reservation/all',
+        type: 'GET',
+        dataType: 'json',
+        success:function(json){
+
+            let $select = $("#select-delReserva");
+
+            $.each(json, function(id, name){
+                $select.append('<option value=' + name.idReservation +'>'+ " Nombre Cliente: "+ name.client.name +" // "+ " Nombre Cabaña: "+ name.cabin.name+ " //"+ " Inicio Reserva: "+ name.startDate+ " // " + " Fin Reserva: "+name.devolutionDate+ " // " + " Status: "+name.status+'</option>');
+                console.log("select del reserva "+name.idReservation);
+            }); 
+        }
+    })
+}
+
+function selectModificarReserva(){
+    console.log("se esta ejecuntando el auto inicio...modificar reserva")
+    $.ajax({
+        url: 'http://localhost:8080/api/Reservation/all',
+        type: 'GET',
+        dataType: 'json',
+        success:function(json){
+
+            let $select = $("#select-modReserva");
+
+            $.each(json, function(id, name){
+                $select.append('<option value=' + name.idReservation +'>'+ " Nombre Cliente: "+ name.client.name +" // "+ " Nombre Cabaña: "+ name.cabin.name+ " //"+ " Inicio Reserva: "+ name.startDate+ " // " + " Fin Reserva: "+name.devolutionDate+ " // " + " Status: "+name.status+'</option>');
+                console.log("select del reserva "+name.idReservation);
+            }); 
+        }
+    })
+}
+
+function modificarReservacion(){
+
+    if($("#newFechaInicio").val() == "" || $("#newFechaFinal").val() == "" || $("#newStatus").val() == "" )  {
+        alert("Todos los campos son obligatorios")
+    }else{
+        let desicion = confirm("Se Modificara la Reservacion Seleccionada, Desea Continuar?")
+        if(desicion){
+            let myData = { 
+                idReservation:$("#select-modReserva").val(),
+                startDate: $("#newFechaInicio").val(),
+                devolutionDate: $("#newFechaFinal").val(),
+                status: $("#newStatus").val()
+                };
+                let dataToSend=JSON.stringify(myData);
+                console.log(dataToSend)
+            $.ajax({    
+                contentType:"application/json",
+                data : dataToSend,
+                url : 'http://localhost:8080/api/Reservation/update',
+                type : 'PUT',
+                dataType: 'json',
+                success : function(json, status, xhr) {
+                    alert("Reserva Modificada Correctamente " + xhr.status);
+                    window.location.reload();      
+                },
+                error : function(xhr, status) {        
+                    alert("Debe existir previamente en el sistema un cliente y una cabaña para poder realizar una reservacion: ") 
+                },
+                complete : function(xhr, status) {    
+                }   
+            });
+        }
+        
+    }
+}
+
+function eliminarReserva(){
+    let desicion = confirm("Se eliminara la Reservacion Seleccionada, Desea Continuar ?");
+    if(desicion){
+        let myData = $("#select-delReserva").val();
+        $.ajax({
+            url: 'http://localhost:8080/api/Reservation/'+myData,
+            type:"DELETE",
+            success:function(xhr, status){
+                alert("Reservacion Eliminada");
+                window.location.reload();
+            }
+        })
+    }
+}
+
+
 function crearReservacion(){
 
     if($("#fechaInicio").val() == "" || $("#fechaFinal").val() == "" ) {
         alert("Todos los campos son obligatorios")
     }else{
-
-        let myData = { 
-            startDate: $("#fechaInicio").val(),
-            devolutionDate: $("#fechaFinal").val(),
-            client:{idClient:$("#select-client").val()},
-            cabin:{id:$("#select-cabin").val()}
-            };
-            console.log("client "+myData.client)
-            let dataToSend=JSON.stringify(myData);
-            console.log(dataToSend)
-        $.ajax({    
-            contentType:"application/json",
-            data : dataToSend,
-            url : 'http://144.22.57.2:8080/api/Reservation/save',
-            type : 'POST',
-            dataType: 'json',
-            success : function(json, status, xhr) {
-                alert("Reserva creada correctamente " + xhr.status)      
-            },
-            error : function(xhr, status) {        
-                alert("Debe existir previamente en el sistema un cliente y una cabaña para poder realizar una reservacion: ") 
-            },
-            complete : function(xhr, status) {    
-            }   
- 
-        });
+        let desicion = confirm("Se creara una nueva Reservacion, Desea continuar?");
+        if(desicion){
+            let myData = { 
+                startDate: $("#fechaInicio").val(),
+                devolutionDate: $("#fechaFinal").val(),
+                client:{idClient:$("#select-client").val()},
+                cabin:{id:$("#select-cabin").val()}
+                };
+                console.log("client "+myData.client)
+                let dataToSend=JSON.stringify(myData);
+                console.log(dataToSend)
+            $.ajax({    
+                contentType:"application/json",
+                data : dataToSend,
+                url : 'http://localhost:8080/api/Reservation/save',
+                type : 'POST',
+                dataType: 'json',
+                success : function(json, status, xhr) {
+                    alert("Reserva creada correctamente " + xhr.status);
+                    window.location.reload();      
+                },
+                error : function(xhr, status) {        
+                    alert("Debe existir previamente en el sistema un cliente y una cabaña para poder realizar una reservacion: ") 
+                },
+                complete : function(xhr, status) {    
+                }   
+     
+            });
+        }  
     }
 }

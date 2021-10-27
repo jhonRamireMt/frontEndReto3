@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Mensaje</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/mensaje.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <section>
+        <header>
+            <div class="container">
+                <a href="">
+                    <img src="img/logocabin256.png" class="logo">
+                </a>
+                <nav>
+                  <a href="index.html">Inicio</a>
+                  <a href="index.html#servicios">Administracion de Datos</a>
+                  <a href="categoria.html">Categorias</a>
+                  <a href="cabin.html">Cabañas</a>
+                  <a href="cliente.html">Clientes</a>    
+                  <a href="mensaje.html">Mensajes</a>        
+                  <a href="reserva.html">Reservaciones</a>
+                </nav>
+            </div>
+        </header>
+    </section>
+
+    <section class="section-datos">
+      <h1 class="tituloLista">ADMINISTRAR MENSAJES</h1>
+      <div class="divResultado" id="resultadoMensaje">
+        <h2 class="subTitulo"></li></h2>
+    </div>
+      <div class="row-form"><br>
+        <fieldset>
+          <legend class="form">CREAR</legend>
+          <p>
+            <label id="label">Selecionar Cabaña</label><br>
+            <select id="select-cabin"></select>
+          </p>
+
+          <p>
+            <label id="label">Selecionar Cliente</label><br>
+            <select id="select-client"></select>
+          </p>
+
+          <p>
+            <label id="label">Descripcion</label>
+            <br>
+            <input class="inputCabin" type="text" id="mensaje" maxlength="250" placeholder="Escribir mensaje">    
+          </p>
+          <button class="botones" onclick="crearMensaje()">Enviar</button>
+
+        </fieldset>   
+                
+      </div>
+
+      <div class="row-form"><br>
+        <fieldset>
+          <legend class="form">ELIMINAR</legend>
+          <p>
+            <label id="label">Selecionar Mensaje</label><br>
+            <select id="select-delMensaje"></select>
+          </p>
+
+          <button class="botones" onclick="eliminarMensaje()">Enviar</button>
+        </fieldset>     
+                
+      </div>
+
+      <div class="row-form"><br>
+        <fieldset>
+          <legend class="form">MODIFICAR</legend>
+          <p>
+            <label id="label">Selecionar Mensaje</label><br>
+            <select id="select-modMensaje"></select>
+          </p>
+
+          <p>
+            <label id="label">Descripcion</label>
+            <br>
+            <input class="inputCabin" type="text" id="newMensaje" maxlength="250" placeholder="Escribir mensaje">    
+          </p>
+
+          <button class="botones" onclick="modificarMensaje()">Enviar</button>
+
+        </fieldset>         
+      </div>
+
+      <div class="botonesListas">  
+        <br>
+        <a href="index.html"><button>Volver al inicio</button></a><br>
+    </div>
+
+    <script text="text/javascript">
+      window.onload = autoInicioCabin();
+      window.onload = autoInicioClient();
+      window.onload = selectEliminarMensaje();
+      window.onload = selectModificarMensaje()
+      window.onload = obtenerMensajes();
+      </script>
+    </section>
+    
+</body>
+</html>

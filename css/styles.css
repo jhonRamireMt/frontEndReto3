@@ -56,16 +56,14 @@ body{
 .tituloLista{
     color:white;
     text-align: center;
-    font-size: 32px;
+    font-size: 38px;
 }
 .listasCabin{
     list-style: none;
     padding-top: 10px;
     font-family: 'Courier New', Courier, monospace;  
 }
-.form{
-    color: white;
-}
+
 .inputCabin{
     padding-top: 8px;
     background-color: aliceblue;
@@ -166,10 +164,47 @@ body{
     margin: 75px;
     padding-left: 30px;
 }
+.row-form{
+   
+    text-align: center;
+    margin: 40px;
+}
 .columnas a{
     background-color: #c23616;
 }
 body{
     background-color: #c23616;
 }
+select{
+    padding: 5px 60px;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing:content-box;
+    box-sizing:content-box;
+    height: 15px;
+}
+#select-delMensaje{
+    padding: 6px 60px;
+}
+
+fieldset{
+   background-color:#2c2c54;
+}
+
+.form{
+    color: white;
+    font-size: 24px;
+    font-weight: bolder;
+    text-align:left;
+}
+
+#label{
+    color: #CAD3C8;
+
+}
+
+tr{
+    border-color: white; 
+}
+
+
 

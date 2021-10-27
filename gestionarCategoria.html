@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Categoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/category.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <section>
+        <header>
+            <div class="container">
+                <a href="">
+                    <img src="img/logocabin256.png" class="logo">
+                </a>
+                <nav>
+                  <a href="index.html">Inicio</a>
+                  <a href="index.html#servicios">Administracion de Datos</a>
+                  <a href="categoria.html">Categorias</a>
+                  <a href="cabin.html">Cabañas</a>
+                  <a href="cliente.html">Clientes</a>    
+                  <a href="mensaje.html">Mensajes</a>        
+                  <a href="reserva.html">Reservaciones</a>
+                </nav>
+            </div>
+        </header>
+    </section>
+
+    <section class="section-datos">
+      <h1 class="tituloLista">ADMINISTRAR CATEGORIAS</h1>
+      <div class="divResultado" id="resultadoCategory">
+        <h2 class="subTitulo"></li></h2>
+    </div> 
+      <div class="row-form"><br>
+        <fieldset>
+          <legend class="form">CREAR</legend>
+          <p>
+            <label id="label">Nombre</label>
+            <br>
+            <input class="inputCabin" type="text" id="nameCategory" maxlength="45" placeholder="nombre">  
+          </p>
+
+          <p>
+            <label id="label">Descripcion</label>
+            <br>
+            <input class="inputCabin" type="text" id="descriptionCategory" maxlength="250" placeholder="Escribir descripccion...">    
+          </p>
+          <button class="botones" onclick="crearCategoria()">Enviar</button>
+        </fieldset> 
+      </div> 
+      <div class="row-form"><br>
+        <fieldset>
+          <legend class="form">ELIMINAR</legend>
+
+          <p>
+            <label id="label">Categoria a Eliminar:</label><br>
+            
+            <select  id="select-delCategory"> </select> 
+          </p>
+
+          <button class="botones" onclick="eliminarCategoria()">Enviar</button>
+        </fieldset>      
+      </div>
+
+      <div class="row-form"><br>
+        <fieldset>
+          <legend class="form">MODIFICAR</legend>
+
+          <p>
+            <label id="label">Categoria a Modificar:</label><br>
+            
+            <select  id="select-updateCategory"> </select> 
+          </p>
+
+          <p>
+            <label id="label">Nuevo Nombre</label>
+            <br>
+            <input class="inputCabin" type="text" id="newNameCategory" maxlength="45" placeholder="nombre">  
+          </p>
+
+          <p>
+            <label id="label">Nueva Descripcion</label>
+            <br>
+            <input class="inputCabin" type="text" id="newDescriptionCategory" maxlength="250" placeholder="Escribir descripccion..."><br>
+            <br>
+        
+          <button class="botones" onclick="actualizarCategoria()">Enviar</button>
+        </fieldset> 
+      </div>
+
+        <div class="botonesListas">  
+          <br>
+          <a href="index.html"><button>Volver al inicio</button></a><br>
+      </div>
+        
+    </section>
+    <script type="text/javascript">
+      window.onload = autoInicioSelectEliminar();
+      window.onload = autoInicioSelectActualizar();
+      window.onload = obtenerCategorias();
+
+    </script>
+    
+       
+</body>
+</html>
