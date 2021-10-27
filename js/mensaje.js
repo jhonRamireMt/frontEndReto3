@@ -2,7 +2,7 @@
 
 function obtenerMensajes(){
     $.ajax({
-        url: 'http://localhost:8080/api/Message/all',
+        url: 'http://144.22.57.2:8080/api/Message/all',
         type: 'GET',
         dataType : 'json',
         success:function(json, status){
@@ -31,7 +31,7 @@ function setTableMensaje(json){
 function autoInicioCabin(){
     console.log("se esta ejecuntando el auto inicio...crear mensaje")
     $.ajax({
-        url: 'http://localhost:8080/api/Cabin/all',
+        url: 'http://144.22.57.2:8080/api/Cabin/all',
         type: 'GET',
         dataType: 'json',
         success:function(json){
@@ -50,7 +50,7 @@ function autoInicioCabin(){
 function autoInicioClient(){
     console.log("se esta ejecuntando el auto inicio...CLIENTE")
     $.ajax({
-        url: 'http://localhost:8080/api/Client/all',
+        url: 'http://144.22.57.2:8080/api/Client/all',
         type: 'GET',
         dataType: 'json',
         success:function(json){
@@ -69,7 +69,7 @@ function selectEliminarMensaje(){
     /* Esta funciona permitira traer los mensajes y borrar el mensaje seleccionado*/
     console.log("se esta ejecuntando el auto inicio...borrar mensaje")
     $.ajax({
-        url: 'http://localhost:8080/api/Message/all',
+        url: 'http://144.22.57.2:8080/api/Message/all',
         type: 'GET',
         dataType: 'json',
         success:function(json){
@@ -88,7 +88,7 @@ function selectModificarMensaje(){
     /* Esta funciona permitira traer los mensajes y borrar el mensaje seleccionado*/
     console.log("se esta ejecuntando el auto inicio...modificar mensaje")
     $.ajax({
-        url: 'http://localhost:8080/api/Message/all',
+        url: 'http://144.22.57.2:8080/api/Message/all',
         type: 'GET',
         dataType: 'json',
         success:function(json){
@@ -108,7 +108,7 @@ function eliminarMensaje(){
     if(desicion){
         let idMessage = $("#select-delMensaje").val()    
     $.ajax({
-        url: 'http://localhost:8080/api/Message/'+idMessage,
+        url: 'http://144.22.57.2:8080/api/Message/'+idMessage,
         type:"DELETE",
         contentType:"application/json",
         dataType:"json",
@@ -136,7 +136,7 @@ function modificarMensaje(){
             $.ajax({
                 data: dataToSend,
                 type:"PUT",
-                url: 'http://localhost:8080/api/Message/update',
+                url: 'http://144.22.57.2:8080/api/Message/update',
                 contentType:"application/json",
                 dataType:"json",
                 success:function(xhr,status){
@@ -168,7 +168,7 @@ function crearMensaje(){
             $.ajax({    
                 contentType:"application/json",
                 data : dataToSend,
-                url : 'http://localhost:8080/api/Message/save',
+                url : 'http://144.22.57.2:8080/api/Message/save',
                 type : 'POST',
                 dataType: 'json',
                 success : function(json, status, xhr) {

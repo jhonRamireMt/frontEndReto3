@@ -1,6 +1,6 @@
 function obtenerCabin(){
     $.ajax({
-        url: 'http://localhost:8080/api/Cabin/all',
+        url: 'http://144.22.57.2:8080/api/Cabin/all',
         type: 'GET',
         dataType : 'json',
         success:function(json, status){
@@ -30,7 +30,7 @@ function setTableCabin(json){
 function autoInicio(){
     console.log("se esta ejecuntando el auto inicio select-category...")
     $.ajax({
-        url: 'http://localhost:8080/api/Category/all',
+        url: 'http://144.22.57.2:8080/api/Category/all',
         type: 'GET',
         dataType : 'json',
         success : function(json){
@@ -48,7 +48,7 @@ function autoInicio(){
 
     console.log("se esta ejecuntando el auto inicio eliminar cabin...")
     $.ajax({
-        url: 'http://localhost:8080/api/Cabin/all',
+        url: 'http://144.22.57.2:8080/api/Cabin/all',
         type: 'GET',
         dataType : 'json',
         success : function(json){
@@ -66,7 +66,7 @@ function autoInicio(){
 
     console.log("se esta ejecuntando el auto inicio Actualizar cabin...")
     $.ajax({
-        url: 'http://localhost:8080/api/Cabin/all',
+        url: 'http://144.22.57.2:8080/api/Cabin/all',
         type: 'GET',
         dataType : 'json',
         success : function(json){
@@ -85,7 +85,7 @@ function autoInicio(){
 
     console.log("se esta ejecuntando el auto inicio Actualizar cabin - categoria...")
     $.ajax({
-        url: 'http://localhost:8080/api/Category/all',
+        url: 'http://144.22.57.2:8080/api/Category/all',
         type: 'GET',
         dataType : 'json',
         success : function(json){
@@ -123,7 +123,7 @@ function crearCabin(){
             $.ajax({    
                 contentType:"application/json",
                 data : dataToSend,
-                url : 'http://localhost:8080/api/Cabin/save',
+                url : 'http://144.22.57.2:8080/api/Cabin/save',
                 type : 'POST',
                 dataType: 'json',
                 success : function(json, status, xhr) {
@@ -148,7 +148,7 @@ function eliminarCabin(){
         let data = $("#select-delCabin").val();
         $.ajax({
             contentType:"application/json",
-            url: 'http://localhost:8080/api/Cabin/'+data,
+            url: 'http://144.22.57.2:8080/api/Cabin/'+data,
             type:"DELETE",
             dataType:"json",
             success:function(xhr,status){
@@ -177,7 +177,7 @@ function actualizarCabin(){
             let dataToSend = JSON.stringify(myData);
             $.ajax({
                 contentType:"application/json",
-                url: 'http://localhost:8080/api/Cabin/update',
+                url: 'http://144.22.57.2:8080/api/Cabin/update',
                 type:"PUT",
                 dataType:"json",
                 data: dataToSend,

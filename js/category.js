@@ -1,6 +1,6 @@
 function obtenerCategorias(){
     $.ajax({
-        url: 'http://localhost:8080/api/Category/all',
+        url: 'http://144.22.57.2:8080/api/Category/all',
         type : 'GET',
         dataType : 'json',
         success : function(json, xhr, status){
@@ -27,7 +27,7 @@ function setTableCategory(json){
 
 function autoInicioSelectEliminar(){
     $.ajax({
-        url: 'http://localhost:8080/api/Category/all',
+        url: 'http://144.22.57.2:8080/api/Category/all',
         type : 'GET',
         dataType:'json',
         success:function(json,){
@@ -41,7 +41,7 @@ function autoInicioSelectEliminar(){
 
 function autoInicioSelectActualizar(){
     $.ajax({
-        url: 'http://localhost:8080/api/Category/all',
+        url: 'http://144.22.57.2:8080/api/Category/all',
         type : 'GET',
         dataType:'json',
         success:function(json,){
@@ -71,7 +71,7 @@ function crearCategoria(){
             $.ajax({    
                 contentType:"application/json",
                 data : dataToSend,
-                url : 'http://localhost:8080/api/Category/save',
+                url : 'http://144.22.57.2:8080/api/Category/save',
                 type : 'POST',
                 dataType: 'json',
                 success : function(json, status, xhr) {
@@ -96,7 +96,7 @@ function eliminarCategoria(){
         let data = $("#select-delCategory").val();
         $.ajax({
             contentType:"application/json",
-            url: 'http://localhost:8080/api/Category/'+data,
+            url: 'http://144.22.57.2:8080/api/Category/'+data,
             type:"DELETE",
             dataType:"json",
             success:function(xhr,status){
@@ -120,7 +120,7 @@ function actualizarCategoria(){
         let dataToSend = JSON.stringify(myData);
         $.ajax({
             contentType:"application/json",
-            url: 'http://localhost:8080/api/Category/update',
+            url: 'http://144.22.57.2:8080/api/Category/update',
             type:"PUT",
             dataType:"json",
             data: dataToSend,
