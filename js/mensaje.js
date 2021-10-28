@@ -169,7 +169,7 @@ function crearMensaje(){
             $.ajax({    
                 contentType:"application/json",
                 data : dataToSend,
-                url : 'http://localhost:8080/api/Message/save',
+                url : 'http://144.22.57.2:8080/api/Message/save',
                 type : 'POST',
                 dataType: 'json',
                 success : function(json, status, xhr) {
