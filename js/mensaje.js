@@ -106,19 +106,19 @@ function selectModificarMensaje(){
 function eliminarMensaje(){
     let desicion = confirm("Se eliminara el Mensaje Seleccionado, Desea Continuar ?")
     if(desicion){
-        let idMessage = $("#select-delMensaje").val()    
-    $.ajax({
-        url: 'http://144.22.57.2:8080/api/Message/'+idMessage,
-        type:"DELETE",
-        contentType:"application/json",
-        dataType:"json",
-        success:function(xhr, status){
-            alert("Mensaje Borrado !!");
-            window.location.reload();
-        }
-    })
+        let idMessage = $("#select-delMensaje").val() 
+        $.ajax({
+            url: 'http://144.22.57.2:8080/api/Message/'+idMessage,
+            type:"DELETE",
+            contentType:"application/json",
+            dataType:"json",
+            success:function(xhr, status){
+                alert("Mensaje Borrado !!");
+                
+            }
+        })   
     }
-    
+    window.location.reload();
 }
 
 function modificarMensaje(){
@@ -141,11 +141,12 @@ function modificarMensaje(){
                 dataType:"json",
                 success:function(xhr,status){
                     alert("Mensaje Modificado");
-                    window.location.reload();
+                    
                 }
             })
         }
     }
+    window.location.reload();
 }
 
 
@@ -168,12 +169,12 @@ function crearMensaje(){
             $.ajax({    
                 contentType:"application/json",
                 data : dataToSend,
-                url : 'http://144.22.57.2:8080/api/Message/save',
+                url : 'http://localhost:8080/api/Message/save',
                 type : 'POST',
                 dataType: 'json',
                 success : function(json, status, xhr) {
                     alert("Mensje enviado correctamente " + xhr.status);
-                    window.location.reload();      
+                          
                 },
                 error : function(xhr, status) {        
                     alert("Debe exixtir un cliente y una cabaña en el sistema para enviar un mensaje "+xhr.status) 
@@ -184,4 +185,5 @@ function crearMensaje(){
             });
         }  
     }
+    window.location.reload();
 }
