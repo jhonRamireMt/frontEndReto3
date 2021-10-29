@@ -64,11 +64,11 @@ function eliminarCliente(){
             type:"DELETE",
             success:function(xhr,status){
                 alert("Cliente Borrado ");
+                location.reload();
                 
             }
         })
     } 
-    window.location.reload();
 }
 
 function crearCliente(){
@@ -94,7 +94,7 @@ function crearCliente(){
                 dataType: 'json',
                 success : function(json, status, xhr) {
                     alert("Cliente creado correctamente " + xhr.status);
- 
+                    location.reload();
                 },
                 error : function(xhr, status) {        
                     alert("Error al crear cliente: "+xhr.status) 
@@ -105,7 +105,7 @@ function crearCliente(){
             });
         }
     }
-    window.location.reload();
+    
 }
 
 function actualizarCliente(){
@@ -131,6 +131,7 @@ function actualizarCliente(){
             dataType: 'json',
             success : function(json, status, xhr) {
                 alert("Cliente Modificado correctamente " + xhr.status);  
+                location.reload();
                    
             },
             error : function(xhr, status) {        
@@ -141,5 +142,5 @@ function actualizarCliente(){
  
         });
     }
-    window.location.reload();
+    
 }

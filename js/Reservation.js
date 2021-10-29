@@ -124,7 +124,7 @@ function modificarReservacion(){
                 dataType: 'json',
                 success : function(json, status, xhr) {
                     alert("Reserva Modificada Correctamente " + xhr.status);
-                         
+                    location.reload();
                 },
                 error : function(xhr, status) {        
                     alert("Debe existir previamente en el sistema un cliente y una cabaña para poder realizar una reservacion: ") 
@@ -134,8 +134,7 @@ function modificarReservacion(){
             });
         }
         
-    }
-    window.location.reload(); 
+    } 
 }
 
 function eliminarReserva(){
@@ -147,11 +146,11 @@ function eliminarReserva(){
             type:"DELETE",
             success:function(xhr, status){
                 alert("Reservacion Eliminada");
+                location.reload();
                 
             }
         })
     }
-    window.location.reload();
 }
 
 
@@ -179,6 +178,7 @@ function crearReservacion(){
                 dataType: 'json',
                 success : function(json, status, xhr) {
                     alert("Reserva creada correctamente " + xhr.status);
+                    location.reload();
                           
                 },
                 error : function(xhr, status) {        
@@ -190,5 +190,4 @@ function crearReservacion(){
             });
         }  
     }
-    window.location.reload();
 }

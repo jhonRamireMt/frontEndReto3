@@ -128,7 +128,7 @@ function crearCabin(){
                 dataType: 'json',
                 success : function(json, status, xhr) {
                     alert("Cabaña creada correctamente " + xhr.status)  
-                        
+                    location.reload();
                 },
                 error : function(xhr, status) {        
                     alert("Debe crear una categoria primero: "+xhr.status) 
@@ -139,8 +139,7 @@ function crearCabin(){
      
             }); 
         }         
-    }
-    window.location.reload(); 
+    } 
 }
 
 function eliminarCabin(){
@@ -154,11 +153,11 @@ function eliminarCabin(){
             dataType:"json",
             success:function(xhr,status){
                 alert("Cabaña Eliminada!");
+                location.reload();
                  
             }
         })
     }
-    window.location.reload(); 
 }
 
 function actualizarCabin(){
@@ -184,10 +183,10 @@ function actualizarCabin(){
                 data: dataToSend,
                 success:function(josn,xhr,status){
                     alert("Cabaña Correctamente Actualizada");
-                   
+                    location.reload();
+
                 }
             })
         }  
     }
-    window.location.reload(); 
 }

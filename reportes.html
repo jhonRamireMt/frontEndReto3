@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/reporte.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>REPORTES</title>
+</head>
+<body>
+    <section>
+        <header>
+            <div class="container">
+                <a href="">
+                    <img src="img/logocabin256.png" class="logo">
+                </a>
+                <nav>
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#servicios">Administracion de Datos</a>
+                    <a href="categoria.html">Categorias</a>
+                    <a href="cabin.html">Cabañas</a>
+                    <a href="cliente.html">Clientes</a>    
+                    <a href="mensaje.html">Mensajes</a>        
+                    <a href="reserva.html">Reservaciones</a>
+                    <a href="reportes.html">Reportes</a>
+                </nav>
+            </div>
+        </header>
+    </section>
+
+    <section class="section-datos">
+        <h1 class="titulo"> REPORTE DE RESERVAS </h1>
+
+        <div  class="row-form">
+            <fieldset class="fieldset-report">
+                <legend class="form">COMPLETADAS VS CANCELADAS</legend>
+                <div class="divCampos">
+                    <div class="divResultado" id="report-status"><br>
+                        <h2 class="subTitulo"></h2>
+                    </div>
+                </div >
+            </fieldset>
+        </div>
+
+        <div  class="row-form">
+            <fieldset class="fieldset-report">
+                <legend class="form">TOP DE CLIENTES</legend>
+                <div class="divCampos">
+                    <br>
+                    <div class="divResultado" id="report-clients"><br>
+                        <h2 class="subTitulo"></h2>
+                    </div>
+                </div >
+            </fieldset>
+        </div>
+
+        <div  class="row-form">
+            <fieldset class="fieldset-report">
+                <legend class="form">BUSQUEDA POR RANGO DE FECHAS</legend>
+                <div class="divCampos">
+                    <br>
+                    <div class="divCampos">
+                        <div class="divResultado" id="report-dates">
+                            <h2 class="subTitulo"></h2>
+                        </div>
+                    </div >
+                </div >
+            </fieldset>
+        </div>
+        
+
+        
+    <div class="row-form"><br>
+      <fieldset>
+        <legend class="form">GENERAR REPORTE POR FECHAS</legend>
+
+        <p>
+          <label id="label">Rango Inicial:</label>
+          <br>
+          <input class="inputCabin" type="date" id="date-one">    
+        </p>
+
+        <p>
+          <label id="label">Rango Final:</label>
+          <br>
+          <input class="inputCabin" type="date" id="date-two" >    
+        </p>
+
+
+        <button class="botones" onclick="obtenerReportDates()">Enviar</button>
+
+      </fieldset> 
+      
+    </div>
+
+            
+    </section>
+    <div class="botonesListas">
+        <a href="index.html"><button>Volver al inicio</button></a>
+    </div>
+
+    <script type="text/javascript">
+        window.onload = obtenerReporteTopReservas();
+        window.onload = obtenerTopClients();
+    </script>
+    
+</body>
+</html>

@@ -169,6 +169,7 @@ body{
     text-align: center;
     margin: 40px;
 }
+
 .columnas a{
     background-color: #c23616;
 }
@@ -206,5 +207,8 @@ tr{
     border-color: white; 
 }
 
+.fieldset-report{
 
+    background-color:#c23616;
+ }
 

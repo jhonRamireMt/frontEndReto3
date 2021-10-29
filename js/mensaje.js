@@ -104,7 +104,8 @@ function selectModificarMensaje(){
 }
 
 function eliminarMensaje(){
-    let desicion = confirm("Se eliminara el Mensaje Seleccionado, Desea Continuar ?")
+    /**esta funcion permite borrar un elemnto por id */
+    let desicion = confirm("Se eliminara el Mensaje Seleccionado, Desea Continuar?")
     if(desicion){
         let idMessage = $("#select-delMensaje").val() 
         $.ajax({
@@ -114,11 +115,10 @@ function eliminarMensaje(){
             dataType:"json",
             success:function(xhr, status){
                 alert("Mensaje Borrado !!");
-                
+                location.reload();
             }
         })   
     }
-    window.location.reload();
 }
 
 function modificarMensaje(){
@@ -126,7 +126,7 @@ function modificarMensaje(){
     if($("#newMensaje").val() == "" ){
         alert("Debe escribir un mensaje para Modificar")
     }else{
-        let desicion = confirm("Se modificara el Mensaje Seleccionado, Desea Continuar ?");
+        let desicion = confirm("Se modificara el Mensaje Seleccionado, Desea Continuar?");
         if(desicion){
             let myData ={
                 idMessage: $("#select-modMensaje").val(),
@@ -141,12 +141,12 @@ function modificarMensaje(){
                 dataType:"json",
                 success:function(xhr,status){
                     alert("Mensaje Modificado");
+                    location.reload();
                     
                 }
             })
         }
     }
-    window.location.reload();
 }
 
 
@@ -155,7 +155,7 @@ function modificarMensaje(){
 function crearMensaje(){
 
     if($("#mensaje").val() == "" ) {
-        alert("Todos los campos son obligatorios")
+        alert("Todos los campos son obligatorios!")
     }else{
         let desicion = confirm("Se creara un nuevo Mensaje, Desea continuar?");
         if(desicion){
@@ -173,11 +173,11 @@ function crearMensaje(){
                 type : 'POST',
                 dataType: 'json',
                 success : function(json, status, xhr) {
-                    alert("Mensje enviado correctamente " + xhr.status);
-                          
+                    alert("Mensje enviado correctamente ");
+                    location.reload();
                 },
                 error : function(xhr, status) {        
-                    alert("Debe exixtir un cliente y una cabaña en el sistema para enviar un mensaje "+xhr.status) 
+                    alert("Debe exixtir un cliente y una cabaña en el sistema") 
                 },
                 complete : function(xhr, status) {    
                 }   
@@ -185,5 +185,4 @@ function crearMensaje(){
             });
         }  
     }
-    window.location.reload();
 }

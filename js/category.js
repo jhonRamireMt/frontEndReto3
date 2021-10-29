@@ -76,6 +76,7 @@ function crearCategoria(){
                 dataType: 'json',
                 success : function(json, status, xhr) {
                     alert("Categoria creada correctamente " + xhr.status);
+                    location.reload();
                           
                 },
                 error : function(xhr, status) {        
@@ -87,7 +88,6 @@ function crearCategoria(){
             });
         }  
     }
-    window.location.reload();
 }
 
 function eliminarCategoria(){
@@ -100,12 +100,12 @@ function eliminarCategoria(){
             type:"DELETE",
             dataType:"json",
             success:function(xhr,status){
-                alert("Categoria Borrada !!");
+                alert("Categoria Borrada");
+                location.reload();
                
             }
         })
-    }
-    window.location.reload(); 
+    } 
 }
 
 function actualizarCategoria(){
@@ -126,10 +126,8 @@ function actualizarCategoria(){
             data: dataToSend,
             success:function(josn,xhr,status){
                 alert("Categoria Correctamente Actualizada");
-                
-                
+                location.reload();
             }
         })
     }
-    window.location.reload();
 }
